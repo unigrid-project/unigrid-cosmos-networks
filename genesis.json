@@ -54,6 +54,13 @@
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
         }
       ]
     },
@@ -71,7 +78,7 @@
           "coins": [
             {
               "denom": "ugd",
-              "amount": "100000000000000000"
+              "amount": "100000000000000"
             }
           ]
         },
@@ -80,7 +87,7 @@
           "coins": [
             {
               "denom": "ugd",
-              "amount": "100000000000000000"
+              "amount": "100000000000000"
             }
           ]
         },
@@ -89,7 +96,16 @@
           "coins": [
             {
               "denom": "ugd",
-              "amount": "100000000000000000"
+              "amount": "100000000000000"
+            }
+          ]
+        },
+        {
+          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "1000000000000"
             }
           ]
         }
@@ -165,7 +181,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "testnet",
+                  "moniker": "test-pickle",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -235,7 +251,7 @@
         "min_deposit": [
           {
             "denom": "ugd",
-            "amount": "10000000"
+            "amount": "10000000000"
           }
         ],
         "max_deposit_period": "172800s",
