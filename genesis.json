@@ -21,14 +21,6 @@
       "app": "0"
     }
   },
-  "ugdvesting": {
-    "params": {
-      "coinPower": 8,
-      "coinPowerValue": "100000000",
-      "precision": 256,
-      "denom": "ugd"
-    }
-  },
   "app_hash": "",
   "app_state": {
     "06-solomachine": null,
@@ -44,21 +36,7 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "unigrid1jhzgt48fjdar60xn3273yv463kkene027ds0r8",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
-        },
-        {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "unigrid1k3xsk7muy8738hteg94de6ynde0v0af9tgptx0",
+          "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -66,6 +44,13 @@
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "unigrid1hhl97v8d88nrc0cs0aw8n2xq8h5u5uc5j6p5y3",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid1zszytcwj4s2t3ln7498jjqp8nwd2pwcjwrqels",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -82,29 +67,11 @@
       },
       "balances": [
         {
-          "address": "unigrid1jhzgt48fjdar60xn3273yv463kkene027ds0r8",
+          "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
           "coins": [
             {
               "denom": "ugd",
-              "amount": "100000000000000"
-            }
-          ]
-        },
-        {
-          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
-          "coins": [
-            {
-              "denom": "ugd",
-              "amount": "100000000000000"
-            }
-          ]
-        },
-        {
-          "address": "unigrid1k3xsk7muy8738hteg94de6ynde0v0af9tgptx0",
-          "coins": [
-            {
-              "denom": "ugd",
-              "amount": "100000000000000"
+              "amount": "100000000000000000"
             }
           ]
         },
@@ -113,7 +80,16 @@
           "coins": [
             {
               "denom": "ugd",
-              "amount": "100000000000000"
+              "amount": "100000000000000000"
+            }
+          ]
+        },
+        {
+          "address": "unigrid1zszytcwj4s2t3ln7498jjqp8nwd2pwcjwrqels",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "100000000000000000"
             }
           ]
         }
@@ -189,7 +165,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "seed node",
+                  "moniker": "testnet",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -209,7 +185,7 @@
                 },
                 "value": {
                   "denom": "ugd",
-                  "amount": "900000000000"
+                  "amount": "825000000000"
                 }
               }
             ],
@@ -388,7 +364,12 @@
       }
     },
     "ugdvesting": {
-      "params": {}
+      "params": {
+        "coinPower": 8,
+        "coinPowerValue": "100000000",
+        "precision": 256,
+        "denom": "ugd"
+      }
     },
     "upgrade": {},
     "vesting": {}
