@@ -45,21 +45,21 @@
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "unigrid1hhl97v8d88nrc0cs0aw8n2xq8h5u5uc5j6p5y3",
           "pub_key": null,
-          "account_number": "0",
+          "account_number": "1",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "unigrid1zszytcwj4s2t3ln7498jjqp8nwd2pwcjwrqels",
           "pub_key": null,
-          "account_number": "0",
+          "account_number": "2",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
           "pub_key": null,
-          "account_number": "0",
+          "account_number": "3",
           "sequence": "0"
         }
       ]
