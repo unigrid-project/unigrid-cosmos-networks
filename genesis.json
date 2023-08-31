@@ -35,11 +35,118 @@
       },
       "accounts": [
         {
-          "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
-          "pub_key": null,
-          "account_number": "0",
-          "sequence": "0"
+          "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "@type": "/cosmos.auth.v1beta1.BaseAccount",
+              "account_number": "0",
+              "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
+              "pub_key": null,
+              "sequence": "0"
+            },
+            "original_vesting": [
+              {
+                "denom": "ugd",
+                "amount": "100000000000000"
+              }
+            ],
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1693492426 + 600"
+          },
+          "start_time": "1693492426",
+          "vesting_periods": [
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            }
+          ]
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
