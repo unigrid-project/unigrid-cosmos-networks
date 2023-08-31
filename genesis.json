@@ -38,7 +38,6 @@
           "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
           "base_vesting_account": {
             "base_account": {
-              "@type": "/cosmos.auth.v1beta1.BaseAccount",
               "account_number": "0",
               "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
               "pub_key": null,
@@ -52,9 +51,9 @@
             ],
             "delegated_free": [],
             "delegated_vesting": [],
-            "end_time": "1693492426 + 600"
+            "end_time": "1693493931"
           },
-          "start_time": "1693492426",
+          "start_time": "1693493331",
           "vesting_periods": [
             {
               "length": "60",
