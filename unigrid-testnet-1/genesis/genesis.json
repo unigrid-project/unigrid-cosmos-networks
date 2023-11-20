@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2023-08-22T11:03:32.099850439Z",
+  "genesis_time": "2023-11-20T15:44:22.259111087Z",
   "chain_id": "unigrid-testnet-1",
   "initial_height": "1",
   "consensus_params": {
@@ -287,11 +287,11 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "test-pickle",
+                  "moniker": "The Unigrid Foundation",
                   "identity": "",
-                  "website": "",
-                  "security_contact": "",
-                  "details": ""
+                  "website": "https://www.unigrid.org/",
+                  "security_contact": "info@unigrid.org",
+                  "details": "Mission: The Unigrid Foundation is dedicated to the development and growth of the Unigrid Network. Our core mission is to support and enhance this decentralized network, fostering an ecosystem that is secure, efficient, and accessible to all users.\n\nRole in the Unigrid Network: As a key stakeholder in the Unigrid Network, the Unigrid Foundation actively participates in network governance, security, and innovation. Our role encompasses both technical and community development, ensuring the network remains robust and responsive to user needs.\n\nInfrastructure Support: We provide comprehensive support for the Unigrid Network's infrastructure, ensuring high availability, security, and performance. Our team is committed to maintaining a state-of-the-art validator infrastructure that upholds the network's integrity and reliability.\n\nCommunity Engagement: The Unigrid Foundation is deeply engaged with the network's community. We prioritize open communication, transparency, and collaboration with network users and developers. Our foundation regularly contributes to community discussions, offers support, and facilitates the adoption of the Unigrid Network."
                 },
                 "commission": {
                   "rate": "0.100000000000000000",
@@ -307,7 +307,7 @@
                 },
                 "value": {
                   "denom": "ugd",
-                  "amount": "825000000000"
+                  "amount": "10000000000000"
                 }
               }
             ],
