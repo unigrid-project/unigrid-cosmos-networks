@@ -66,14 +66,32 @@ wget $DOWNLOAD_URL
 chmod +x paxd
 sudo mv paxd /usr/local/bin/
 
-# Start or enable paxd service
-if systemctl list-units --full --all | grep -Fq "paxd.service"; then
-    sudo systemctl start paxd.service
+# Check if paxd service file exists and create/update it
+SERVICE_FILE="/etc/systemd/system/paxd.service"
+if [ -f "$SERVICE_FILE" ]; then
+    echo "Updating paxd service configuration..."
 else
-    # Initialize and enable paxd service if it doesn't exist
-    sudo systemctl enable paxd.service
-    sudo systemctl start paxd.service
+    echo "Creating paxd service configuration..."
 fi
+echo "[Unit]
+Description=Unigrid Paxd Service
+After=network.target
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/paxd start --home=$HOME/.unigrid-testnet-1 --hedgehog=https://82.208.23.218:39886 --p2p.seeds \"e5e85ef8eaa493c566108823519bd2c89b3a7803@194.233.95.48:26656,666d2cc217a5aef8b6b7fc8608706df76640b42a@38.242.156.2:26656\"
+Restart=always
+RestartSec=3
+StandardOutput=file:$HOME/.unigrid-testnet-1/paxd.log
+StandardError=file:$HOME/.unigrid-testnet-1/paxd-error.log
+
+[Install]
+WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
+
+# Reload systemd, enable and start paxd service
+sudo systemctl daemon-reload
+sudo systemctl enable paxd.service
+sudo systemctl start paxd.service
 
 tail -f "$LOG_FILE"
 
