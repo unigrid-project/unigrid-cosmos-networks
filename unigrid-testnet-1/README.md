@@ -22,6 +22,8 @@ This script will:
 
 **Note:** The script will tail the `paxd` log file at the end. You can exit the log view by pressing `Ctrl+C` and access it again anytime with the command `tail -f ~/.unigrid-testnet-1/paxd.log`.
 
+> Add `unigrid-testnet-1` to keplr: <https://docs.unigrid.org/unigrid-cosmos-networks/>
+
 ## System Commands
 
 ### Stop the Service
