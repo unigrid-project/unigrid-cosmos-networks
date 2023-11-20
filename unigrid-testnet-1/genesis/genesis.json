@@ -303,7 +303,7 @@
                 "validator_address": "unigridvaloper1attpyzmtq9k4r42gkglnx0edgukjh969jdc3g8",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "a2D9Mzzn99pM0tWJM1nakG9ChfrI0KduPNNbKzwxE6U="
+                  "key": "OX65CA4ca/FYrcwz1cRcoSJFeLW940n9FaC9HK25zXc="
                 },
                 "value": {
                   "denom": "ugd",
