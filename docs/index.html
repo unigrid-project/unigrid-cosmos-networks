@@ -11,8 +11,7 @@
 
     <style>
         body {
-            background: rgb(22, 16, 50);
-            background: linear-gradient(90deg, rgb(11, 1, 54) 0%, rgb(22, 22, 22) 100%);
+            background: linear-gradient(90deg, rgb(173, 216, 230) 0%, rgb(135, 206, 250) 100%);
             color: #fff;
         }
 
@@ -39,19 +38,16 @@
             margin-right: 10px;
         }
 
-        .container {
+        /* Additional CSS for centering the column */
+        .row {
             display: flex;
             justify-content: center;
             /* Center horizontally */
-            align-items: center;
-            /* Center vertically */
-            min-height: 100vh;
-            /* Full height of the viewport */
         }
 
-        .row {
+        /* Optional: In case you want to ensure the row takes full width of its container */
+        .container {
             width: 100%;
-            /* Optional: In case you want the row to take full width */
         }
     </style>
 </head>
@@ -126,6 +122,9 @@
 
             document.getElementById("row-card-deck").appendChild(colDiv);
         }
+        const colDiv = document.createElement('div');
+        // Adjust the classes here for the desired width and centering
+        colDiv.classList.add('col-lg-6', 'offset-lg-3', 'col-md-8', 'offset-md-2', 'col-sm-12', 'mb-2', 'mt-4');
 
         // Call the createChainCard() function for each chain in the list 
         window.onload = function () {
