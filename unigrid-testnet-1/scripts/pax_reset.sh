@@ -93,6 +93,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable paxd.service
 sudo systemctl start paxd.service
 
+sleep 2
 tail -f "$LOG_FILE"
 
 echo "Script completed."
