@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# to run this script
+# wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-1/scripts/pax_reset.sh | bash
+
 # Check if paxd service exists and stop it if it does
 if systemctl list-units --full --all | grep -Fq "paxd.service"; then
     sudo systemctl stop paxd.service
