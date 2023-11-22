@@ -298,7 +298,7 @@
                   "max_rate": "0.200000000000000000",
                   "max_change_rate": "0.010000000000000000"
                 },
-                "min_self_delegation": "1",
+                "min_self_delegation": "1000000000000",
                 "delegator_address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
                 "validator_address": "unigridvaloper1attpyzmtq9k4r42gkglnx0edgukjh969jdc3g8",
                 "pubkey": {

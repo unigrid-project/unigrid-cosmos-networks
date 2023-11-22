@@ -24,6 +24,21 @@ This script will:
 
 > Add `unigrid-testnet-1` to keplr: <https://docs.unigrid.org/unigrid-cosmos-networks/>
 
+
+🚰 Faucet
+The unigrid-testnet-1 testnet faucet is available via our [discord server](https://docs.unigrid.org/docs/testnet/jointestnet/)
+
+If you are a validator and in need of more funds, you can request them via this [form](https://forms.gle/Ubv2u6T1AWgWkTRS9).
+
+## Chaim params
+| Params          | Value                                                                                                                                                                                                          |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Validator min_self_delegation: |        1000000000000           |
+| Decimals:                      |        8                       |
+| Denom:                         |        ugd                     |
+| Gov min_deposit amount:        |        5000000000              |
+ 
+
 ## System Commands
 
 ### Stop the Service
