@@ -135,6 +135,25 @@ sudo systemctl enable paxd.service
 sudo systemctl start paxd.service
 ```
 
+## Generate Keys
+
+To create your keys and Unigrid address plase change `<key-name>` to whatever you would like to call them and follow the below commands.
+
+```bash
+# Create new keypair
+paxd keys add <key-name> --home=/home/$USER/.unigrid-testnet-1
+
+# Restore existing wallet with mnemonic seed phrase.
+paxd keys add <key-name> --recover --home=/home/$USER/.unigrid-testnet-1
+
+# Query the keystore for your public address
+paxd keys show <key-name> -a --home=/home/$USER/.unigrid-testnet-1
+
+# Show all keys
+paxd keys list --home=/home/$USER/.unigrid-testnet-1
+```
+
+
 ## Monitoring
 To monitor the logs of `paxd`:
 ```bash
