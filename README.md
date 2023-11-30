@@ -58,7 +58,7 @@ Testnets are an indispensable part of the blockchain development ecosystem. By s
 
 | Node          | ID                                                                                                                                                                                                          |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Unigrid Seed | `e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656` <br/> `8f278bf57932e1f808aefc7c82aaaf130470e2bd@194.233.95.48:26656`                                                               |
+| Unigrid Seed | `e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656` <br/> `06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656`                                                               |
 
 Add the Node ID in your `p2p.seeds` section of you `config.toml`:
 
@@ -74,7 +74,7 @@ Add the Node ID in your `p2p.seeds` section of you `config.toml`:
 # ...
 
 # Comma separated list of seed nodes to connect to
-seeds = "8f278bf57932e1f808aefc7c82aaaf130470e2bd@194.233.95.48:26656,8f278bf57932e1f808aefc7c82aaaf130470e2bd@194.233.95.48:26656"
+seeds = "06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656"
 ```
 
 🚰 Faucet
