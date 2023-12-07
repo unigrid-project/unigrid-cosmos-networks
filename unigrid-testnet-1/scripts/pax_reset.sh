@@ -79,7 +79,7 @@ After=network.target
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/paxd start --home=$HOME/.unigrid-testnet-1 --hedgehog=https://82.208.23.218:39886 --p2p.seeds \"06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656\"
+ExecStart=/usr/local/bin/paxd start --home=$HOME/.unigrid-testnet-1 --hedgehog=https://149.102.147.45:39886 --p2p.seeds \"06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656\"
 Restart=always
 RestartSec=3
 StandardOutput=file:$HOME/.unigrid-testnet-1/paxd.log
