@@ -1,0 +1,506 @@
+{
+  "genesis_time": "2023-11-20T15:44:22.259111087Z",
+  "chain_id": "unigrid-testnet-2",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {
+      "app": "0"
+    }
+  },
+  "app_hash": "",
+  "app_state": {
+    "06-solomachine": null,
+    "07-tendermint": null,
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "account_number": "0",
+              "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
+              "pub_key": null,
+              "sequence": "0"
+            },
+            "original_vesting": [
+              {
+                "denom": "ugd",
+                "amount": "100000000000000"
+              }
+            ],
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1693504156"
+          },
+          "start_time": "1693503556",
+          "vesting_periods": [
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            },
+            {
+              "length": "60",
+              "amount": [
+                {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid1hhl97v8d88nrc0cs0aw8n2xq8h5u5uc5j6p5y3",
+          "pub_key": null,
+          "account_number": "1",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid1zszytcwj4s2t3ln7498jjqp8nwd2pwcjwrqels",
+          "pub_key": null,
+          "account_number": "2",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid1p9ulc4a96ycj48gqr02pu6j869r7fv5pqh2paa",
+          "pub_key": null,
+          "account_number": "3",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
+          "pub_key": null,
+          "account_number": "3",
+          "sequence": "0"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "100000000000000"
+            }
+          ]
+        },
+        {
+          "address": "unigrid1hhl97v8d88nrc0cs0aw8n2xq8h5u5uc5j6p5y3",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "100000000000000"
+            }
+          ]
+        },
+        {
+          "address": "unigrid1p9ulc4a96ycj48gqr02pu6j869r7fv5pqh2paa",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "200000000000000"
+            }
+          ]
+        },
+        {
+          "address": "unigrid16vyxrtjarguun728vg0fuxs847sh5vls38cfss",
+          "coins": [
+            {
+              "denom": "ugd",
+              "amount": "1000000000000"
+            }
+          ]
+        }
+      ],
+      "supply": [],
+      "denom_metadata": [
+        {
+          "description": "The native token of Unigrid.",
+          "denom_units": [
+            {
+              "denom": "uugd",
+              "exponent": 0,
+              "aliases": [
+                "fermi"
+              ]
+            },
+            {
+              "denom": "ugd",
+              "exponent": 8,
+              "aliases": []
+            }
+          ],
+          "base": "uugd",
+          "display": "ugd"
+        }
+      ],
+      "send_enabled": []
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "consensus": null,
+    "cosmosdaemon": {
+      "params": {}
+    },
+    "crisis": {
+      "constant_fee": {
+        "denom": "ugd",
+        "amount": "1000"
+      }
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.020000000000000000",
+        "base_proposer_reward": "0.000000000000000000",
+        "bonus_proposer_reward": "0.000000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": []
+      },
+      "delegator_withdraw_infos": [],
+      "previous_proposer": "",
+      "outstanding_rewards": [],
+      "validator_accumulated_commissions": [],
+      "validator_historical_rewards": [],
+      "validator_current_rewards": [],
+      "delegator_starting_infos": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "The Unigrid Foundation",
+                  "identity": "",
+                  "website": "https://www.unigrid.org/",
+                  "security_contact": "info@unigrid.org",
+                  "details": "The Unigrid Foundation supports and enhances the Unigrid Network, focusing on network governance, security, and innovation."
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1000000000000",
+                "delegator_address": "unigrid1attpyzmtq9k4r42gkglnx0edgukjh969jrsmn8",
+                "validator_address": "unigridvaloper1attpyzmtq9k4r42gkglnx0edgukjh969jdc3g8",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "OX65CA4ca/FYrcwz1cRcoSJFeLW940n9FaC9HK25zXc="
+                },
+                "value": {
+                  "denom": "ugd",
+                  "amount": "10000000000000"
+                }
+              }
+            ],
+            "memo": "e5e85ef8eaa493c566108823519bd2c89b3a7803@10.0.42.81:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A6MJHGW0PNrurr45o+48PJsfhg88iTtZoFcofum7qjTd"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "CKZdC8zgi75Rmo8kD1AoW+cIdp6XOuW6OjM9fSAZXqVHlOjrhT5stSJ13MeqvYJiRlyRmPa91iG1S2cS4ADsNA=="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": [],
+      "votes": [],
+      "proposals": [],
+      "deposit_params": null,
+      "voting_params": null,
+      "tally_params": null,
+      "params": {
+        "min_deposit": [
+          {
+            "denom": "uugd",
+            "amount": "5000000000"
+          }
+        ],
+        "max_deposit_period": "172800s",
+        "voting_period": "172800s",
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000",
+        "min_initial_deposit_ratio": "0.000000000000000000",
+        "burn_vote_quorum": false,
+        "burn_proposal_deposit_prevote": false,
+        "burn_vote_veto": true
+      }
+    },
+    "group": {
+      "group_seq": "0",
+      "groups": [],
+      "group_members": [],
+      "group_policy_seq": "0",
+      "group_policies": [],
+      "proposal_seq": "0",
+      "proposals": [],
+      "votes": []
+    },
+    "ibc": {
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint",
+            "09-localhost"
+          ]
+        },
+        "create_localhost": false,
+        "next_client_sequence": "0"
+      },
+      "connection_genesis": {
+        "connections": [],
+        "client_connection_paths": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      },
+      "channel_genesis": {
+        "channels": [],
+        "acknowledgements": [],
+        "commitments": [],
+        "receipts": [],
+        "send_sequences": [],
+        "recv_sequences": [],
+        "ack_sequences": [],
+        "next_channel_sequence": "0"
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "ports": [],
+        "params": {
+          "controller_enabled": true
+        }
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "port": "icahost",
+        "params": {
+          "host_enabled": true,
+          "allow_messages": [
+            "*"
+          ]
+        }
+      }
+    },
+    "params": null,
+    "slashing": {
+      "params": {
+        "signed_blocks_window": "100",
+        "min_signed_per_window": "0.500000000000000000",
+        "downtime_jail_duration": "600s",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.010000000000000000"
+      },
+      "signing_infos": [],
+      "missed_blocks": []
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "86400s",
+        "max_validators": 100,
+        "max_entries": 7,
+        "historical_entries": 10000,
+        "bond_denom": "ugd",
+        "min_commission_rate": "0.000000000000000000"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "validators": [],
+      "delegations": [],
+      "unbonding_delegations": [],
+      "redelegations": [],
+      "exported": false
+    },
+    "transfer": {
+      "port_id": "transfer",
+      "denom_traces": [],
+      "params": {
+        "send_enabled": true,
+        "receive_enabled": true
+      },
+      "total_escrowed": []
+    },
+    "ugdmint": {
+      "minter": {
+        "subsidy_halving_interval": "0.130000000000000000"
+      },
+      "params": {
+        "mint_denom": "ugd",
+        "subsidy_halving_interval": "50000.000000000000000000",
+        "goal_bonded": "0.670000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "ugdvesting": {
+      "params": {
+        "coinPower": 8,
+        "coinPowerValue": "100000000",
+        "precision": 256,
+        "denom": "ugd"
+      }
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}

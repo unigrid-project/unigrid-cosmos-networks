@@ -9,7 +9,8 @@
 
 | Chain ID                              | Type      | Status     | Version       | Notes                     |
 |---------------------------------------|-----------|------------|---------------|---------------------------|
-| [unigrid-testnet-1](./unigrid-testnet-1) | `testnet` | **Active** | `v0.0.1` | Testnet                   |
+| [unigrid-testnet-1](./unigrid-testnet-1) | `testnet` | **Depricated** | `v0.0.1` | Testnet                   |
+| [unigrid-testnet-2](./unigrid-testnet-2) | `testnet` | **Active** | `v0.0.1` | Testnet                   |
 
 
 
@@ -41,9 +42,9 @@
 
 Testnets are an indispensable part of the blockchain development ecosystem. By simulating the conditions of the mainnet while eliminating risks, they play a critical role in ensuring the robustness, security, and efficiency of blockchain solutions.
 
-### 🟧 unigrid-testnet-1
+### 🟧 unigrid-testnet-2
 
-| Chain ID         | `unigrid-testnet-1`                                      |
+| Chain ID         | `unigrid-testnet-2`                                      |
 |------------------|----------------------------------------------------|
 | Paxd version | `v0.0.4`                                      |
 | Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-1/genesis/genesis.json) |
@@ -78,6 +79,6 @@ seeds = "06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,06ed85d8b3
 ```
 
 🚰 Faucet
-The unigrid-testnet-1 testnet faucet is available via our [discord server](https://docs.unigrid.org/docs/testnet/jointestnet/)
+The unigrid-testnet-2 testnet faucet is available via our [discord server](https://docs.unigrid.org/docs/testnet/jointestnet/)
 
 If you are an validator needing more funds, you can request them via this [form](https://forms.gle/Ubv2u6T1AWgWkTRS9).
