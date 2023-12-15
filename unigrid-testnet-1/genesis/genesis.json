@@ -1,6 +1,6 @@
 {
   "genesis_time": "2023-11-20T15:44:22.259111087Z",
-  "chain_id": "unigrid-testnet-1",
+  "chain_id": "unigrid-testnet-2",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -159,6 +159,13 @@
           "address": "unigrid1zszytcwj4s2t3ln7498jjqp8nwd2pwcjwrqels",
           "pub_key": null,
           "account_number": "2",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "unigrid1p9ulc4a96ycj48gqr02pu6j869r7fv5pqh2paa",
+          "pub_key": null,
+          "account_number": "3",
           "sequence": "0"
         },
         {
