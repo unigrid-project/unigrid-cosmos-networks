@@ -10,7 +10,7 @@
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
 ```bash
-wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-2/scripts/pax_reset.sh | bash
+wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-1/scripts/pax_reset.sh | bash
 ```
 
 This script will:
@@ -22,7 +22,7 @@ This script will:
 
 **Note:** The script will tail the `paxd` log file at the end. You can exit the log view by pressing `Ctrl+C` and access it again anytime with the command `tail -f ~/.unigrid-testnet-2/paxd.log`.
 
-> Add `unigrid-testnet-2` to keplr: <https://docs.unigrid.org/unigrid-cosmos-networks/>
+> Add `unigrid-testnet-1` to keplr: <https://docs.unigrid.org/unigrid-cosmos-networks/>
 
 
 🚰 Faucet

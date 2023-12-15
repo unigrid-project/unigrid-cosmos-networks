@@ -1,6 +1,6 @@
 {
   "genesis_time": "2023-11-20T15:44:22.259111087Z",
-  "chain_id": "unigrid-testnet-2",
+  "chain_id": "unigrid-testnet-1",
   "initial_height": "1",
   "consensus_params": {
     "block": {
