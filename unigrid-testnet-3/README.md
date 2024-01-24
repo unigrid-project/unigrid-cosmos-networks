@@ -10,7 +10,7 @@
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
 ```bash
-wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-2/scripts/pax_reset.sh | bash
+wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/scripts/pax_reset.sh | bash
 ```
 
 This script will:
@@ -94,11 +94,11 @@ Remove existing data and log files from `~/.pax/data` directory.
 ### Step 4: Download and Verify Genesis File
 Download the `genesis.json`:
 ```bash
-wget -O genesis.json https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-2/genesis/genesis.json
+wget -O genesis.json https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/genesis/genesis.json
 ```
 Verify the checksum:
 ```bash
-wget -O sha256sum.txt https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-2/genesis/sha256sum.txt
+wget -O sha256sum.txt https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/genesis/sha256sum.txt
 sha256sum -c sha256sum.txt
 ```
 
