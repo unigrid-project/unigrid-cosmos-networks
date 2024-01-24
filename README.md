@@ -9,8 +9,10 @@
 
 | Chain ID                              | Type      | Status     | Version       | Notes                     |
 |---------------------------------------|-----------|------------|---------------|---------------------------|
+| [unigrid-testnet-3](./unigrid-testnet-3) | `testnet` | **Active** | `v0.0.9` | Testnet                   |
+| [unigrid-testnet-2](./unigrid-testnet-2) | `testnet` | **Depricated** | `v0.0.8` | Testnet                   |
 | [unigrid-testnet-1](./unigrid-testnet-1) | `testnet` | **Depricated** | `v0.0.1` | Testnet                   |
-| [unigrid-testnet-2](./unigrid-testnet-2) | `testnet` | **Active** | `v0.0.1` | Testnet                   |
+
 
 
 
@@ -42,12 +44,12 @@
 
 Testnets are an indispensable part of the blockchain development ecosystem. By simulating the conditions of the mainnet while eliminating risks, they play a critical role in ensuring the robustness, security, and efficiency of blockchain solutions.
 
-### 🟧 unigrid-testnet-2
+### 🟧 unigrid-testnet-3
 
-| Chain ID         | `unigrid-testnet-2`                                      |
+| Chain ID         | `unigrid-testnet-3`                                      |
 |------------------|----------------------------------------------------|
-| Paxd version | `v0.0.4`                                      |
-| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-1/genesis/genesis.json) |
+| Paxd version | `v0.0.9`                                      |
+| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/genesis/genesis.json) |
 | RPC              | <https://rpc-testnet.unigrid.org/>                 |
 | gRPC             | <https://grpc-testnet.unigrid.org>                |
 | REST             | <https://rest-testnet.unigrid.org/>                 |
