@@ -9,11 +9,10 @@
 
 | Chain ID                              | Type      | Status     | Version       | Notes                     |
 |---------------------------------------|-----------|------------|---------------|---------------------------|
-| [unigrid-testnet-3](./unigrid-testnet-3) | `testnet` | **Active** | `v0.0.9` | Testnet                   |
+| [unigrid-testnet-4](./unigrid-testnet-4) | `testnet` | **Active** | `v0.0.10` | Testnet                   |
+| [unigrid-testnet-3](./unigrid-testnet-3) | `testnet` | **Deprecated** | `v0.0.9` | Testnet                   |
 | [unigrid-testnet-2](./unigrid-testnet-2) | `testnet` | **Deprecated** | `v0.0.8` | Testnet                   |
 | [unigrid-testnet-1](./unigrid-testnet-1) | `testnet` | **Deprecated** | `v0.0.1` | Testnet                   |
-
-
 
 
 ## Testnets
@@ -44,12 +43,12 @@
 
 Testnets are an indispensable part of the blockchain development ecosystem. By simulating the conditions of the mainnet while eliminating risks, they play a critical role in ensuring the robustness, security, and efficiency of blockchain solutions.
 
-### 🟧 unigrid-testnet-3
+### 🟧 unigrid-testnet-4
 
-| Chain ID         | `unigrid-testnet-3`                                      |
+| Chain ID         | `unigrid-testnet-4`                                      |
 |------------------|----------------------------------------------------|
-| Paxd version | `v0.0.9`                                      |
-| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/genesis/genesis.json) |
+| Paxd version | `v0.0.10`                                      |
+| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/genesis/genesis.json) |
 | RPC              | <https://rpc-testnet.unigrid.org/>                 |
 | gRPC             | <https://grpc-testnet.unigrid.org>                |
 | REST             | <https://rest-testnet.unigrid.org/>                 |
@@ -61,7 +60,7 @@ Testnets are an indispensable part of the blockchain development ecosystem. By s
 
 | Node          | ID                                                                                                                                                                                                          |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Unigrid Seed | `e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656` <br/> `06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656`                                                               |
+| Unigrid Seed | `e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656` <br/> `06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656`   <br/> `8cc2192d6de0936632e0818c3b030a465a40d2dc@149.102.133.13:26656`                                                            |
 
 Add the Node ID in your `p2p.seeds` section of you `config.toml`:
 
@@ -77,7 +76,7 @@ Add the Node ID in your `p2p.seeds` section of you `config.toml`:
 # ...
 
 # Comma separated list of seed nodes to connect to
-seeds = "06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656"
+seeds = "8cc2192d6de0936632e0818c3b030a465a40d2dc@149.102.133.13:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656"
 ```
 
 🚰 Faucet
