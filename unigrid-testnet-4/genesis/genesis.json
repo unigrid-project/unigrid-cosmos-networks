@@ -129,7 +129,27 @@
           "amount": "600000000000000"
         }
       ],
-      "denom_metadata": [],
+      "denom_metadata": [
+        {
+          "description": "The native token of Unigrid.",
+          "denom_units": [
+            {
+              "denom": "uugd",
+              "exponent": 0,
+              "aliases": [
+                "fermi"
+              ]
+            },
+            {
+              "denom": "ugd",
+              "exponent": 8,
+              "aliases": []
+            }
+          ],
+          "base": "uugd",
+          "display": "ugd"
+        }
+      ],
       "send_enabled": []
     },
     "capability": {
