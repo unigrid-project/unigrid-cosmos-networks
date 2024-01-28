@@ -65,7 +65,7 @@ Testnets are an indispensable part of the blockchain development ecosystem. By s
 Add the Node ID in your `p2p.seeds` section of you `config.toml`:
 
 
-> in our automated script these are passed in during paxd startup: [Install Guide](https://github.com/unigrid-project/unigrid-cosmos-networks/tree/master/unigrid-testnet-1)
+> in our automated script these are passed in during paxd startup: [Install Guide](https://github.com/unigrid-project/unigrid-cosmos-networks/tree/master/unigrid-testnet-4)
 
 ```toml
 #######################################################
