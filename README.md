@@ -80,6 +80,6 @@ seeds = "8cc2192d6de0936632e0818c3b030a465a40d2dc@149.102.133.13:26656,06ed85d8b
 ```
 
 🚰 Faucet
-The unigrid-testnet-2 testnet faucet is available via our [discord server](https://docs.unigrid.org/docs/testnet/jointestnet/)
+The unigrid-testnet faucet is available via our [discord server](https://docs.unigrid.org/docs/testnet/jointestnet/)
 
 If you are an validator needing more funds, you can request them via this [form](https://forms.gle/Ubv2u6T1AWgWkTRS9).

@@ -61,7 +61,7 @@
     <script>
         const unigridChain = {
             chainName: 'Unigrid Testnet',
-            chainId: 'unigrid-testnet-3',
+            chainId: 'unigrid-testnet-4',
             chainLogo: 'unigrid-logo-round.png'
         }
 
@@ -146,13 +146,13 @@
             console.log('Add ' + chainId + ' to Keplr');
 
             try {
-                // Unigrid | unigrid-testnet-3
-                if (chainId == "unigrid-testnet-3") {
+                // Unigrid | unigrid-testnet-4
+                if (chainId == "unigrid-testnet-4") {
 
                     await window.keplr.experimentalSuggestChain({
                         features: [],
-                        chainId: "unigrid-testnet-3",
-                        chainName: "Unigrid (testnet-3)",
+                        chainId: "unigrid-testnet-4",
+                        chainName: "Unigrid (testnet-4)",
                         rpc: "https://rpc-testnet.unigrid.org/",
                         rest: "https://rest-testnet.unigrid.org/",
                         bip44: {
