@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# Define log file paths using $USER variable
+LOG_FILE="/home/$USER/.pax/paxd.log"
+ERROR_LOG_FILE="/home/$USER/.pax/paxd-error.log"
+BACKUP_DIR="/home/$USER/.pax/log_backups"
+
+echo "Starting paxd management script..."
+
+# Function to rotate logs
+rotate_logs() {
+    echo "Rotating log files..."
+    mkdir -p "$BACKUP_DIR"
+    CURRENT_DATETIME=$(date +"%Y%m%d-%H%M%S")
+    mv "$LOG_FILE" "$BACKUP_DIR/paxd.log-$CURRENT_DATETIME"
+    echo "Moved $LOG_FILE to $BACKUP_DIR/paxd.log-$CURRENT_DATETIME"
+    mv "$ERROR_LOG_FILE" "$BACKUP_DIR/paxd-error.log-$CURRENT_DATETIME"
+    echo "Moved $ERROR_LOG_FILE to $BACKUP_DIR/paxd-error.log-$CURRENT_DATETIME"
+}
+
+# Function to reinstall paxd
+reinstall_paxd() {
+    echo "WARNING: This action will remove the local chain data and resync from scratch."
+    read -p "Are you sure you want to continue? (yes/no) " choice
+    case "$choice" in
+    yes | Yes | YES)
+        echo "Proceeding with paxd reinstallation..."
+        # Remove all files and directories in ~/.paxd/data except priv_validator_state.json
+        find "$HOME/.pax/data" -mindepth 1 -not -name 'priv_validator_state.json' -exec rm -rf {} +
+        wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-3/scripts/pax_reset.sh | bash
+        echo "paxd reinstallation complete."
+        ;;
+    *)
+        echo "Reinstallation aborted."
+        ;;
+    esac
+}
+
+# Function to update paxd
+update_paxd() {
+    echo "Updating paxd daemon..."
+    sudo systemctl stop paxd
+    wget https://github.com/unigrid-project/cosmos-daemon/releases/latest/download/paxd -O paxd_latest
+    chmod +x paxd_latest
+    sudo mv paxd_latest /usr/local/bin/paxd
+    sudo systemctl start paxd
+    echo "Update completed. Tail the log file using:"
+    echo "tail -f $LOG_FILE"
+}
+
+# Function to reset the chain
+reset_chain() {
+    echo "Resetting the blockchain data..."
+    read -p "Are you sure you want to reset the chain data? This action cannot be undone. (yes/no) " choice
+    case "$choice" in 
+        yes|Yes|YES)
+            echo "Proceeding with chain reset..."
+            paxd comet unsafe-reset-all
+            echo "Chain reset complete."
+
+            # Perform log rotation and restart service (same as in 'restart' case)
+            echo "Restart command received for post-reset."
+            rotate_logs
+            echo "Restarting paxd service..."
+            sudo systemctl restart paxd
+            echo "paxd service restarted successfully."
+            echo "To tail the new log file, use:"
+            echo "tail -f $LOG_FILE"
+            ;;
+        *)
+            echo "Chain reset aborted."
+            ;;
+    esac
+}
+
+# Handle script arguments
+case "$1" in
+restart)
+    echo "Restart command received."
+    rotate_logs
+    echo "Restarting paxd service..."
+    sudo systemctl restart paxd
+    echo "paxd service restarted successfully."
+    echo "To tail the new log file, use:"
+    echo "tail -f $LOG_FILE"
+    ;;
+stop)
+    echo "Stop command received."
+    echo "Stopping paxd service..."
+    sudo systemctl stop paxd
+    echo "paxd service stopped successfully."
+    ;;
+reinstall)
+    echo "Reinstall command received."
+    reinstall_paxd
+    ;;
+update)
+    echo "updating the paxd daemon"
+    rotate_logs
+    update_paxd
+    ;;
+reset)
+    echo "Reset command received."
+    sudo systemctl stop paxd
+    reset_chain
+    ;;
+*)
+    echo "Usage: $0 {restart|stop|reinstall|update|reset}"
+    exit 1
+    ;;
+esac
+
+echo "paxd management script completed."
