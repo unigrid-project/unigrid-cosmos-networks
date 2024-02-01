@@ -4,7 +4,8 @@ import sys
 import hashlib
 
 def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
+    pip3_path = '/usr/bin/pip3'  # Specify the absolute path to pip3
+    subprocess.check_call([pip3_path, "install", package])
 
 # Check and install tomlkit and requests if they are not installed
 try:
