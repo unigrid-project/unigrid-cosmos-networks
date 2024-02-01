@@ -12,6 +12,13 @@ To connect to the Unigrid testnet automatically, run the following command in yo
 ```bash
 wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh | bash
 ```
+***If the above script does not prompt you for the node name and just skips over those follow these instructions.***
+```bash
+wget raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh
+chmod +x paxd_insall.sh
+./paxd_insall.sh
+```
+
 
 This script will:
 - Stop the existing `paxd` service (if it exists).
