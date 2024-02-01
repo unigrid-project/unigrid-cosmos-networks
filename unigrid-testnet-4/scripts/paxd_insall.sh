@@ -40,6 +40,9 @@ paxd init "$NODE_NAME" --chain-id=$CHAIN_ID
 # Ask the user if they want to enable state-sync or fast sync
 read -p "Would you like to enable state-sync to get synced in minutes? (yes/no): " enable_state_sync
 
+# Update config.toml with state-sync configuration
+CONFIG_TOML="$BASE_DIR/config/config.toml"
+
 if [[ $enable_state_sync == "yes" ]]; then
     # Fetch the latest block height and calculate the last snapshot height
     LATEST_HEIGHT_JSON=$(curl -s https://rpc-testnet.unigrid.org/block)
@@ -51,28 +54,25 @@ if [[ $enable_state_sync == "yes" ]]; then
     SNAPSHOT_INFO_JSON=$(curl -s "https://rpc-testnet.unigrid.org/block?height=$LAST_SNAPSHOT_HEIGHT")
     SNAPSHOT_HASH=$(echo $SNAPSHOT_INFO_JSON | jq -r '.result.block_id.hash')
 
-    # Update config.toml with state-sync configuration
-    CONFIG_TOML="$BASE_DIR/config/config.toml"
-    NEW_STATESYNC_CONFIG=$(cat << EOF
-[statesync]
-enable = true
-rpc_servers = "tcp://38.242.156.2:26657,tcp://194.233.95.48:26657"
+    # Prepare the new statesync configuration
+    NEW_STATESYNC_CONFIG="enable = true
+rpc_servers = \"tcp://38.242.156.2:26657,tcp://194.233.95.48:26657\"
 trust_height = $LAST_SNAPSHOT_HEIGHT
-trust_hash = "$SNAPSHOT_HASH"
-trust_period = "168h0m0s"
-discovery_time = "15s"
-temp_dir = ""
-chunk_request_timeout = "10s"
-chunk_fetchers = "4"
-EOF
-    )
+trust_hash = \"$SNAPSHOT_HASH\"
+trust_period = \"168h0m0s\"
+discovery_time = \"15s\"
+temp_dir = \"\"
+chunk_request_timeout = \"10s\"
+chunk_fetchers = \"4\""
 
     # Replace the existing statesync configuration
     if grep -q '^\[statesync\]' "$CONFIG_TOML"; then
-        # Use a marker to avoid issues with slashes in the content
-        sed -i "/^\[statesync\]/,/^\[.*\]/c\\$NEW_STATESYNC_CONFIG" "$CONFIG_TOML"
+        # Use a temporary file to avoid issues with in-place editing
+        TEMP_CONFIG_TOML="$CONFIG_TOML.temp"
+        awk "/^\[statesync\]/ {print; print \"$NEW_STATESYNC_CONFIG\"; found=1; next} /^\[/ {found=0} found {next} 1" "$CONFIG_TOML" > "$TEMP_CONFIG_TOML"
+        mv "$TEMP_CONFIG_TOML" "$CONFIG_TOML"
     else
-        echo "$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
+        echo -e "\n[statesync]\n$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
     fi
 
     echo "State-sync has been enabled with height $LAST_SNAPSHOT_HEIGHT and hash $SNAPSHOT_HASH."
@@ -101,7 +101,7 @@ fi
 mv genesis.json "$CONFIG_DIR/"
 
 echo "Installing the manager script..."
-wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/install_manager.sh | bash
+bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/install_manager.sh)" ; source ~/.bashrc
 
 # Check if paxd service file exists and create/update it
 SERVICE_FILE="/etc/systemd/system/paxd.service"
