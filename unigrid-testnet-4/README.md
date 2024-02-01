@@ -10,7 +10,7 @@
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
 ```bash
-wget -4qO- -o- https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/pax_reset.sh | bash
+wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh | bash
 ```
 
 This script will:

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # to run this script
-# wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/pax_install.sh | bash
+# bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh)" ; source ~/.bashrc
+
+
 
 # Define chain ID and base directory
 CHAIN_ID="unigrid-testnet-4"
@@ -51,14 +53,28 @@ if [[ $enable_state_sync == "yes" ]]; then
 
     # Update config.toml with state-sync configuration
     CONFIG_TOML="$BASE_DIR/config/config.toml"
-    sed -i '/\[statesync\]/,/^\[.*\]/{//!d}' $CONFIG_TOML  # Remove existing statesync config
-    cat << EOF >> $CONFIG_TOML
+    NEW_STATESYNC_CONFIG=$(cat << EOF
 [statesync]
 enable = true
 rpc_servers = "tcp://38.242.156.2:26657,tcp://194.233.95.48:26657"
 trust_height = $LAST_SNAPSHOT_HEIGHT
 trust_hash = "$SNAPSHOT_HASH"
+trust_period = "168h0m0s"
+discovery_time = "15s"
+temp_dir = ""
+chunk_request_timeout = "10s"
+chunk_fetchers = "4"
 EOF
+    )
+
+    # Replace the existing statesync configuration
+    if grep -q '^\[statesync\]' "$CONFIG_TOML"; then
+        # Use a marker to avoid issues with slashes in the content
+        sed -i "/^\[statesync\]/,/^\[.*\]/c\\$NEW_STATESYNC_CONFIG" "$CONFIG_TOML"
+    else
+        echo "$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
+    fi
+
     echo "State-sync has been enabled with height $LAST_SNAPSHOT_HEIGHT and hash $SNAPSHOT_HASH."
 else
     echo "State-sync not enabled. Continuing with regular sync."
