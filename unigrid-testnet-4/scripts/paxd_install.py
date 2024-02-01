@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import hashlib
 
 def install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -108,11 +109,15 @@ run_command(f"wget -O genesis.json {genesis_url}")
 checksum_url = "https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/genesis/sha256sum.txt"
 run_command(f"wget -O sha256sum.txt {checksum_url}")
 
-checksum_expected = open('sha256sum.txt').read().strip()
-checksum_actual = run_command("sha256sum genesis.json | awk '{ print $1 genesis.json | awk '{ print $1 }'")
+with open('sha256sum.txt', 'r') as f:
+    checksum_expected = f.read().strip().split()[0]
+
+checksum_actual = hashlib.sha256(open('genesis.json', 'rb').read()).hexdigest()
+
 if checksum_expected != checksum_actual:
     print("Checksum verification failed!")
     exit(1)
+
 
 # Move genesis.json to the correct location
 os.rename('genesis.json', os.path.join(CONFIG_DIR, 'genesis.json'))
