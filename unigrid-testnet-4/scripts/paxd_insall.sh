@@ -42,7 +42,46 @@ if ! command -v python3 &> /dev/null; then
 fi
 
 # Run the Python script with sudo
-sudo python3 "$PYTHON_SCRIPT_NAME"
+python3 "$PYTHON_SCRIPT_NAME"
 
 # Optionally, remove the Python script after execution
 rm "$PYTHON_SCRIPT_NAME"
+
+# Define the service file content
+SERVICE_FILE="/etc/systemd/system/paxd.service"
+SERVICE_CONTENT="[Unit]
+Description=Unigrid Paxd Service
+After=network.target
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/paxd start --hedgehog=https://149.102.147.45:39886 --p2p.seeds \"8cc2192d6de0936632e0818c3b030a465a40d2dc@149.102.133.13:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656\"
+Restart=always
+RestartSec=3
+StandardOutput=file:$HOME/.pax/paxd.log
+StandardError=file:$HOME/.pax/paxd-error.log
+
+[Install]
+WantedBy=multi-user.target"
+
+# Check if the service file exists and create/update it
+if [ -f "$SERVICE_FILE" ]; then
+    echo "Updating paxd service configuration..."
+else
+    echo "Creating paxd service configuration..."
+fi
+
+echo "$SERVICE_CONTENT" | sudo tee "$SERVICE_FILE"
+
+# Reload systemd, enable and start paxd service
+sudo systemctl daemon-reload
+sudo systemctl enable paxd.service
+sudo systemctl start paxd.service
+
+echo "Paxd has been installed successfully."
+echo "You can safely close this log with Ctrl+C."
+sleep 5
+
+tail -f "$HOME/.pax/paxd.log"
+
+

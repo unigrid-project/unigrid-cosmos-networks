@@ -125,36 +125,4 @@ os.rename('genesis.json', os.path.join(CONFIG_DIR, 'genesis.json'))
 print("Installing the manager script...")
 run_command('bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/install_manager.sh)" ; source ~/.bashrc')
 
-# Check if paxd service file exists and create/update it
-service_content = f"""[Unit]
-Description=Unigrid Paxd Service
-After=network.target
-
-[Service]
-User={os.getenv('USER')}
-ExecStart=/usr/local/bin/paxd start --hedgehog=https://149.102.147.45:39886 --p2p.seeds "8cc2192d6de0936632e0818c3b030a465a40d2dc@149.102.133.13:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656"
-Restart=always
-RestartSec=3
-StandardOutput=file:{os.path.join(BASE_DIR, 'paxd.log')}
-StandardError=file:{os.path.join(BASE_DIR, 'paxd-error.log')}
-
-[Install]
-WantedBy=multi-user.target"""
-
-if os.path.isfile(SERVICE_FILE):
-    print("Updating paxd service configuration...")
-else:
-    print("Creating paxd service configuration...")
-
-with open(SERVICE_FILE, 'w') as f:
-    f.write(service_content)
-
-# Reload systemd, enable and start paxd service
-run_command('sudo systemctl daemon-reload')
-run_command('sudo systemctl enable paxd.service')
-run_command('sudo systemctl start paxd.service')
-
-# Tail the log file
-run_command(f'tail -f {LOG_FILE}')
-
 print("Script completed.")
