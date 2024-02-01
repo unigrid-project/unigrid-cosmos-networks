@@ -73,7 +73,7 @@ CONFIG_TOML = os.path.join(CONFIG_DIR, "config.toml")
 
 if enable_state_sync.lower() == "yes":
     latest_height_json = requests.get("https://rpc-testnet.unigrid.org/block").json()
-    latest_height = latest_height_json['result']['block']['header']['height']
+    latest_height = int(latest_height_json['result']['block']['header']['height'])  # Convert to int
     snapshot_interval = 1000
     last_snapshot_height = latest_height - (latest_height % snapshot_interval)
 
