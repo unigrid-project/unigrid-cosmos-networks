@@ -65,13 +65,14 @@ temp_dir = \"\"
 chunk_request_timeout = \"10s\"
 chunk_fetchers = \"4\""
 
-    # Check if the statesync section exists and replace it
+    # Replace the existing statesync configuration
     if grep -q '^\[statesync\]' "$CONFIG_TOML"; then
-        # Use sed to replace the statesync section
-        sed -i "/^\[statesync\]/,/^\[.*\]/c\\$NEW_STATESYNC_CONFIG" "$CONFIG_TOML"
+        # Use sed to replace the statesync section, escaping newlines for compatibility
+        sed -i "/^\[statesync\]/,/^\[.*\]/c\\
+[statesync]\n$NEW_STATESYNC_CONFIG" "$CONFIG_TOML"
     else
         # If the statesync section doesn't exist, append it
-        echo -e "\n$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
+        echo -e "[statesync]\n$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
     fi
 
     echo "State-sync has been enabled with height $LAST_SNAPSHOT_HEIGHT and hash $SNAPSHOT_HASH."
