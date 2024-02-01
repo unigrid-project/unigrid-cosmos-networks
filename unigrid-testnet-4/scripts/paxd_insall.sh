@@ -7,6 +7,14 @@
 PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_install.py"
 PYTHON_SCRIPT_NAME="paxd_install.py"
 
+# Install python3-pip package
+if ! command -v pip3 &> /dev/null; then
+    echo "pip3 is not installed. Installing python3-pip..."
+    sudo apt-get update
+    sudo apt-get install -y python3-pip
+    echo "python3-pip installed successfully."
+fi
+
 # Download the Python script
 wget "$PYTHON_SCRIPT_URL" -O "$PYTHON_SCRIPT_NAME"
 

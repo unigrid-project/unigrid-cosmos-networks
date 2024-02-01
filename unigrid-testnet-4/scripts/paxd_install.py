@@ -4,7 +4,7 @@ import sys
 import hashlib
 
 def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
 
 # Check and install tomlkit and requests if they are not installed
 try:
