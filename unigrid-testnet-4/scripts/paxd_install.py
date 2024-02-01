@@ -76,7 +76,8 @@ if enable_state_sync.lower() == "yes":
     latest_height_json = requests.get("https://rpc-testnet.unigrid.org/block").json()
     latest_height = int(latest_height_json['result']['block']['header']['height'])  # Convert to int
     snapshot_interval = 1000
-    last_snapshot_height = latest_height - (latest_height % snapshot_interval)
+    additional_offset = 1000
+    last_snapshot_height = (latest_height - additional_offset) - ((latest_height - additional_offset) % snapshot_interval)
 
     snapshot_info_json = requests.get(f"https://rpc-testnet.unigrid.org/block?height={last_snapshot_height}").json()
     snapshot_hash = snapshot_info_json['result']['block_id']['hash']
