@@ -54,7 +54,7 @@ if [[ $enable_state_sync == "yes" ]]; then
     SNAPSHOT_INFO_JSON=$(curl -s "https://rpc-testnet.unigrid.org/block?height=$LAST_SNAPSHOT_HEIGHT")
     SNAPSHOT_HASH=$(echo $SNAPSHOT_INFO_JSON | jq -r '.result.block_id.hash')
 
-    # Prepare the new statesync configuration
+    # Define the new statesync configuration
     NEW_STATESYNC_CONFIG="enable = true
 rpc_servers = \"tcp://38.242.156.2:26657,tcp://194.233.95.48:26657\"
 trust_height = $LAST_SNAPSHOT_HEIGHT
@@ -65,14 +65,13 @@ temp_dir = \"\"
 chunk_request_timeout = \"10s\"
 chunk_fetchers = \"4\""
 
-    # Replace the existing statesync configuration
+    # Check if the statesync section exists and replace it
     if grep -q '^\[statesync\]' "$CONFIG_TOML"; then
-        # Use a temporary file to avoid issues with in-place editing
-        TEMP_CONFIG_TOML="$CONFIG_TOML.temp"
-        awk "/^\[statesync\]/ {print; print \"$NEW_STATESYNC_CONFIG\"; found=1; next} /^\[/ {found=0} found {next} 1" "$CONFIG_TOML" > "$TEMP_CONFIG_TOML"
-        mv "$TEMP_CONFIG_TOML" "$CONFIG_TOML"
+        # Use sed to replace the statesync section
+        sed -i "/^\[statesync\]/,/^\[.*\]/c\\$NEW_STATESYNC_CONFIG" "$CONFIG_TOML"
     else
-        echo -e "\n[statesync]\n$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
+        # If the statesync section doesn't exist, append it
+        echo -e "\n$NEW_STATESYNC_CONFIG" >> "$CONFIG_TOML"
     fi
 
     echo "State-sync has been enabled with height $LAST_SNAPSHOT_HEIGHT and hash $SNAPSHOT_HASH."
