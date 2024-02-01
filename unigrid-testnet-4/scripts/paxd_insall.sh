@@ -4,7 +4,7 @@
 # bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh)" ; source ~/.bashrc
 
 # Define the URL of the Python script
-PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.py"
+PYTHON_SCRIPT_URL="https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_install.py"
 PYTHON_SCRIPT_NAME="paxd_install.py"
 
 # Download the Python script
