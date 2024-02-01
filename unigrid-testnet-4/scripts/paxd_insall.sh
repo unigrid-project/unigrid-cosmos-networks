@@ -78,8 +78,12 @@ sudo systemctl daemon-reload
 sudo systemctl enable paxd.service
 sudo systemctl start paxd.service
 
+echo "Installing the manager script..."
+sudo bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/install_manager.sh)" ; source ~/.bashrc
+
 echo "Paxd has been installed successfully."
 echo "You can safely close this log with Ctrl+C."
+echo -e "\n\n"
 sleep 5
 
 tail -f "$HOME/.pax/paxd.log"

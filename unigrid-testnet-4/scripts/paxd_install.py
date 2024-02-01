@@ -123,7 +123,4 @@ if checksum_expected != checksum_actual:
 # Move genesis.json to the correct location
 os.rename('genesis.json', os.path.join(CONFIG_DIR, 'genesis.json'))
 
-print("Installing the manager script...")
-run_command('bash -ic "$(wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/install_manager.sh)" ; source ~/.bashrc')
-
 print("Script completed.")
