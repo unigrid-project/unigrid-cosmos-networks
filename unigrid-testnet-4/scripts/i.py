@@ -150,7 +150,7 @@ def cleanup_files(files):
     for file in files:
         try:
             os.remove(file)
-            print(Colors.GREEN f"Removed file: {file}" + Colors.RESET)
+            print(Colors.GREEN + f"Removed file: {file}" + Colors.RESET)
         except OSError as e:
             print(Colors.RED + f"Error deleting file {file}: {e.strerror}" + Colors.RESET)
 
