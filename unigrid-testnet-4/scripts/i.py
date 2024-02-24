@@ -146,6 +146,14 @@ def create_or_update_service(service_file, service_content):
 def manage_paxd_command(command):
     run_command(f"manage_paxd {command}")
 
+def cleanup_files(files):
+    for file in files:
+        try:
+            os.remove(file)
+            print(Colors.GREEN f"Removed file: {file}" + Colors.RESET)
+        except OSError as e:
+            print(Colors.RED + f"Error deleting file {file}: {e.strerror}" + Colors.RESET)
+
 def main_installation_script(venv_dir):
     script_content = """
 
@@ -339,6 +347,9 @@ WantedBy=multi-user.target""".format(os.getenv("USER"), os.getenv("HOME"))
     # start the paxd service
     manage_paxd_command("restart")
 
+    # Clean up files after the installation
+    files_to_cleanup = ['i.py', 'genesis.json', 'sha256sum.txt']
+    cleanup_files(files_to_cleanup)
     # Print the Paxd ASCII art
     print(Colors.ORANGE + ascii_art + Colors.RESET)
     print(Colors.ORANGE + " Copyright © 2021-2024 The Unigrid Foundation, UGD Software AB\n\n " + Colors.RESET)

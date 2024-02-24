@@ -10,7 +10,7 @@
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
 ```bash
-wget -4qO- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/i.py | python3 -
+wget -4qO i.py raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/i.py && python3 i.py
 ```
 ***If the above command does not work for you, follow these instructions.***
 ```bash
