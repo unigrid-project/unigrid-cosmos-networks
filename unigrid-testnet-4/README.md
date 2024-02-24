@@ -10,13 +10,13 @@
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
 ```bash
-wget -4qO- -o- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh | bash
+wget -4qO- raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/i.py | python3 -
 ```
-***If the above script does not prompt you for the node name and just skips over those follow these instructions.***
+***If the above command does not work for you, follow these instructions.***
 ```bash
-wget raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/paxd_insall.sh
-chmod +x paxd_insall.sh
-./paxd_insall.sh
+wget -4qO i.py raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/scripts/i.py
+# Run the script with Python 3
+python3 i.py
 ```
 
 
