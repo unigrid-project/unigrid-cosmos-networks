@@ -1,7 +1,6 @@
 {
   "app_name": "paxd",
-  "app_version": "0.0.13-d88a16be",
-  "name": "unigrid-devnet-2",
+  "app_version": "0.0.13",
   "genesis_time": "2024-03-13T10:04:46.818810416Z",
   "chain_id": "unigrid-devnet-2",
   "initial_height": 1,
@@ -263,7 +262,9 @@
         "clients_metadata": [],
         "params": {
           "allowed_clients": [
-            "*"
+            "06-solomachine",
+            "07-tendermint",
+            "09-localhost"
           ]
         },
         "create_localhost": false,
