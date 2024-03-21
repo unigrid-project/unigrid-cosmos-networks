@@ -62,11 +62,16 @@
         const unigridChain = {
             chainName: 'Unigrid Testnet',
             chainId: 'unigrid-testnet-4',
-            chainLogo: 'unigrid-logo-round.png'
+            chainLogo: 'unigrid_orange.png'
         }
-
+        // Define the devnet chain
+        const devnetChain = {
+            chainName: 'Unigrid Devnet',
+            chainId: 'unigrid-devnet-2',
+            chainLogo: 'unigrid_blue.png'
+        };
         // Define the list of chains
-        const chains = [];
+        const chains = [devnetChain];
 
 
         function createChainCard(chainName, chainId, chainLogo, currentCardDeck) {
@@ -188,9 +193,47 @@
                             high: 0.03
                         },
                     });
-                }
-
-                else {
+                } else if (chainId === "unigrid-devnet-2") {
+                    // Configuration for Unigrid Devnet
+                    await window.keplr.experimentalSuggestChain({
+                        features: [],
+                        chainId: "unigrid-devnet-2",
+                        chainName: "Unigrid Devnet",
+                        rpc: "https://rpc-devnet.unigrid.org/",
+                        rest: "https://rest-devnet.unigrid.org/",
+                        bip44: {
+                            coinType: 118,
+                        },
+                        bech32Config: {
+                            bech32PrefixAccAddr: "unigrid",
+                            bech32PrefixAccPub: "unigrid" + "pub",
+                            bech32PrefixValAddr: "unigrid" + "valoper",
+                            bech32PrefixValPub: "unigrid" + "valoperpub",
+                            bech32PrefixConsAddr: "unigrid" + "valcons",
+                            bech32PrefixConsPub: "unigrid" + "valconspub",
+                        },
+                        currencies: [{
+                            coinDenom: "UGD",
+                            coinMinimalDenom: "uugd",
+                            coinDecimals: 8,
+                        }],
+                        feeCurrencies: [{
+                            coinDenom: "UGD",
+                            coinMinimalDenom: "uugd",
+                            coinDecimals: 8,
+                        }],
+                        stakeCurrency: {
+                            coinDenom: "UGD",
+                            coinMinimalDenom: "uugd",
+                            coinDecimals: 8,
+                        },
+                        gasPriceStep: {
+                            low: 0.01,
+                            average: 0.025,
+                            high: 0.03
+                        },
+                    });
+                } else {
                     console.log('Cannot add ' + chainId + ' to Keplr');
                     console.log(chainId + ' not recognized ');
                 }
