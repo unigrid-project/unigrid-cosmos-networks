@@ -9,7 +9,8 @@
 
 | Chain ID                              | Type      | Status     | Version       | Notes                     |
 |---------------------------------------|-----------|------------|---------------|---------------------------|
-| [unigrid-testnet-4](./unigrid-testnet-4) | `testnet` | **Active** | `v0.0.10` | Testnet                   |
+| [unigrid-testnet-4](./unigrid-testnet-5) | `testnet` | **Active** | `v0.0.15` | Testnet                   |
+| [unigrid-testnet-4](./unigrid-testnet-4) | `testnet` | **Deprecated** | `v0.0.10` | Testnet                   |
 | [unigrid-testnet-3](./unigrid-testnet-3) | `testnet` | **Deprecated** | `v0.0.9` | Testnet                   |
 | [unigrid-testnet-2](./unigrid-testnet-2) | `testnet` | **Deprecated** | `v0.0.8` | Testnet                   |
 | [unigrid-testnet-1](./unigrid-testnet-1) | `testnet` | **Deprecated** | `v0.0.1` | Testnet                   |
