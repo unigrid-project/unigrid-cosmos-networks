@@ -277,7 +277,12 @@ with open('sha256sum.txt', 'r') as f:
 
 checksum_actual = hashlib.sha256(open('genesis.json', 'rb').read()).hexdigest()
 
-if checksum_expected != checksum_actual:
+if checksum_expected == checksum_actual:
+    # Move the genesis.json to the CONFIG_DIR
+    genesis_destination = os.path.join(CONFIG_DIR, 'genesis.json')
+    shutil.move('genesis.json', genesis_destination)
+    print("genesis.json moved to " + genesis_destination)
+else:
     print("Checksum verification failed!" + RESET)
     exit(1)
 """

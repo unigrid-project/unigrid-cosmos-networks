@@ -9,6 +9,12 @@
 ### Running the Script
 To connect to the Unigrid testnet automatically, run the following command in your terminal:
 
+Before running the script its recommened to upgrade the server.
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
 ```bash
 wget -4qO i.py raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-5/scripts/i.py && python3 i.py
 ```
