@@ -337,7 +337,7 @@ After=network.target
 
 [Service]
 User={0}
-ExecStart=/usr/local/bin/paxd start --hedgehog=https://149.102.147.45:39886 --p2p.seeds "fe420bfcff68beff824d9777bfe6ce1aa4cf8f43@149.102.133.13:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656"
+ExecStart=/usr/local/bin/paxd start --hedgehog=https://149.102.147.45:39886 --p2p.seeds "96de577a45c68d8d539236334eb097515b63c70a@207.180.254.48:26656,fe420bfcff68beff824d9777bfe6ce1aa4cf8f43@149.102.133.13:26656,06ed85d8b34ca3a4275072894fc297dce416b708@194.233.95.48:26656,e339ab8163a2774fccbc78ff09ffbf0991adc310@38.242.156.2:26656"
 Restart=always
 RestartSec=3
 StandardOutput=file:{1}/.pax/paxd.log
