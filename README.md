@@ -46,15 +46,15 @@ Testnets are an indispensable part of the blockchain development ecosystem. By s
 
 ### 🟧 unigrid-testnet-4
 
-| Chain ID         | `unigrid-testnet-4`                                      |
+| Chain ID         | `unigrid-testnet-5`                                      |
 |------------------|----------------------------------------------------|
-| Paxd version | `v0.0.10`                                      |
-| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-4/genesis/genesis.json) |
+| Paxd version | `v0.0.15`                                      |
+| Genesis          | [genesis.json](https://raw.githubusercontent.com/unigrid-project/unigrid-cosmos-networks/master/unigrid-testnet-5/genesis/genesis.json) |
 | RPC              | <https://rpc-two-testnet.unigrid.org/>                 |
-| gRPC             | <https://grpc-testnet.unigrid.org>                |
+| gRPC             | <grpc-testnet.unigrid.org:9090>                |
 | REST             | <https://rest-two-testnet.unigrid.org/>                 |
 | Faucet           | [UGD faucet](https://docs.unigrid.org/docs/testnet/jointestnet/)            |
-| Explorer         | <https://explorer-testnet.unigrid.org/>            |
+| Explorer         | <https://explorer-devnet.unigrid.org/>            |
 <!-- | Snapshots        | <https://unigrid.org>           | -->
 
 
