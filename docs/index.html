@@ -61,7 +61,7 @@
     <script>
         const unigridChain = {
             chainName: 'Unigrid Testnet',
-            chainId: 'unigrid-testnet-4',
+            chainId: 'unigrid-testnet-5',
             chainLogo: 'unigrid_orange.png'
         }
         // Define the devnet chain
@@ -149,15 +149,12 @@
 
         async function addToKeplr(chainId) {
             console.log('Add ' + chainId + ' to Keplr');
-
             try {
-                // Unigrid | unigrid-testnet-4
-                if (chainId == "unigrid-testnet-4") {
-
+                if (chainId == "unigrid-testnet-5") {
                     await window.keplr.experimentalSuggestChain({
                         features: [],
-                        chainId: "unigrid-testnet-4",
-                        chainName: "Unigrid (testnet-4)",
+                        chainId: "unigrid-testnet-5",
+                        chainName: "Unigrid (testnet-5)",
                         rpc: "https://rpc-testnet.unigrid.org/",
                         rest: "https://rest-testnet.unigrid.org/",
                         bip44: {
@@ -173,17 +170,17 @@
                         },
                         currencies: [{
                             coinDenom: "UGD",
-                            coinMinimalDenom: "ugd",
+                            coinMinimalDenom: "uugd",
                             coinDecimals: 8,
                         },],
                         feeCurrencies: [{
                             coinDenom: "UGD",
-                            coinMinimalDenom: "ugd",
+                            coinMinimalDenom: "uugd",
                             coinDecimals: 8,
                         },],
                         stakeCurrency: {
                             coinDenom: "UGD",
-                            coinMinimalDenom: "ugd",
+                            coinMinimalDenom: "uugd",
                             coinDecimals: 8,
                         },
                         coinType: 118,
