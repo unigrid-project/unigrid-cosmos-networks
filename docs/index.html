@@ -49,10 +49,38 @@
         .container {
             width: 100%;
         }
+
+        .keplr-install-link {
+            font-size: 24px;
+            /* Large Text */
+            color: blue;
+            /* Text Color Blue */
+            font-weight: bold;
+            /* Bold Text */
+            text-decoration: none;
+            /* Removes default underline of links */
+        }
+
+        .keplr-install-link:hover {
+            text-decoration: underline;
+            /* Underline on hover for better UX */
+        }
+
+        .small-text {
+            font-size: 14px;
+            /* Smaller Text Size */
+            color: #fff;
+            /* White Color Text */
+        }
     </style>
 </head>
 
 <body>
+    <div class="text-center mt-4 mb-4">
+        <a href="https://www.keplr.app/download" class="keplr-install-link">Install KEPLR Wallet First</a>
+        <p class="small-text">Only desktop is supported at this time because of limitations in the KEPLR mobile apps.
+        </p>
+    </div>
 
     <div class="container py-2" id="container-card-deck">
         <div class="row" id="row-card-deck"></div>
